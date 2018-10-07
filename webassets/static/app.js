@@ -20,9 +20,13 @@ $(document).ready(function() {
 });
 
 var buildElement = (el) => {
-    var element = "<div>";
+    var element = "<div id='"+el.find("guid").text()+"' class='message'>";
     element += "<h2>" + el.find("title").text() + "</h2>";
-    element += "<a href=" + el.find("link").text() + ">" + el.find("description").text() + "</a>";
+    if (el.find("link").text() != "") {
+        element += "<a href='" + el.find("link").text() + "'>" + el.find("description").text() + "</a>";
+    } else {
+        element += el.find("description").text();
+    }
     element += "</div>";
     return element;
 }

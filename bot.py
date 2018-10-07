@@ -23,7 +23,8 @@ def updateFeed(message):
     feed_entry.title('Message from ' + message.author.name)
     feed_entry.description(message.content)
     # Find out why index is sometimes 0 and sometimes 1
-    feed_entry.link(href=message.embeds[0]["url"])
+    if len(message.embeds) > 0:
+        feed_entry.link(href=message.embeds[0]["url"])
     feed.rss_file("discord.xml", pretty=True)
 
 client.run(token)

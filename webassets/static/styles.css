@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+}
+#app {
+    width: 100%;
+}
+.message {
+margin: 15px auto;
+padding: 10px;
+border: 1px solid black;
+width: 30%;
+/*
+    -webkit-box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.75);
+*/
+}
