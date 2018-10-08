@@ -1,5 +1,4 @@
-import bot
-import webserver
+from subprocess import Popen, PIPE
 
 '''
 Todo:
@@ -18,8 +17,11 @@ Clean up code
 
 
 def main():
-    bot.main()
-    webserver.main()
+    # Run bot
+    Popen(['./venv/bin/python3', 'bot.py'])
+
+    # Run server
+    Popen(['./venv/bin/python3', 'webserver.py'], stdout=PIPE).communicate()
 
 
 if __name__ == '__main__':
