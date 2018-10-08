@@ -1,4 +1,6 @@
 from flask import Flask, send_from_directory
+import config
+
 app = Flask(__name__,static_url_path='')
 
 @app.route('/')
@@ -13,7 +15,7 @@ def send_js(path):
 
 @app.route('/rss')
 def serve_rss_file():
-    return send_from_directory('.', 'discord.xml')
+    return send_from_directory('.', 'discord.xml'), 200, {'Content-Type': 'application/rss+xml'}
 
 
-app.run(debug=True)
+app.run(port=config.flaskport, debug=config.flaskdebug)
