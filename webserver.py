@@ -17,7 +17,7 @@ def main():
     def serve_rss_file():
         return send_from_directory('.', 'discord.xml'), 200, {'Content-Type': 'application/rss+xml'}
 
-    app.run(port=config.flaskport, debug=config.flaskdebug)
+    Flask.run(app, port=config.flaskport, debug=config.flaskdebug)
 
 
 if __name__ == '__main__':
