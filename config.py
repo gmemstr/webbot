@@ -1,4 +1,4 @@
-channel="test-channel"
+channel = "test-channel"
 feedtitle = "Discord Channel RSS"
 feedlink = "github.com/gmemstr/webbot"
 feeddescription = "Discord Channel RSS"
