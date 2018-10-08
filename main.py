@@ -1,5 +1,5 @@
-from multiprocessing import Pool
-import os
+import bot
+import webserver
 
 '''
 Todo:
@@ -16,11 +16,11 @@ Always:
 Clean up code
 '''
 
+
+def main():
+    bot.main()
+    webserver.main()
+
+
 if __name__ == '__main__':
-    processes = ('bot.py', 'webserver.py')
-
-    def run_process(process):
-        os.system('python3 {}'.format(process))
-
-    pool = Pool(processes=2)
-    pool.map(run_process, processes)
+    main()
