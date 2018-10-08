@@ -18,13 +18,15 @@ async def on_message(message):
     updateFeed(message)
 
 def updateFeed(message):
-    feed_entry = feed.add_entry()
-    feed_entry.id(message.id)
-    feed_entry.title('Message from ' + message.author.name)
-    feed_entry.description(message.content)
-    # Find out why index is sometimes 0 and sometimes 1
-    if len(message.embeds) > 0:
+    print(message.channel)
+    if str(message.channel) == "test-channel":
+        print(message.channel)
+        feed_entry = feed.add_entry()
+        feed_entry.id(message.id)
+        feed_entry.title('Message from ' + message.author.name)
+        feed_entry.description(message.content)
+        # Find out why index is sometimes 0 and sometimes 1
         feed_entry.link(href=message.embeds[0]["url"])
-    feed.rss_file("discord.xml", pretty=True)
+        feed.rss_file("discord.xml", pretty=True)
 
 client.run(token)

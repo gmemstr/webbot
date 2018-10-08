@@ -10,6 +10,7 @@ Threads for webserver and bot
 Generate JSON alongside RSS
 Logging?
 Make into custom website for moderating remotely?!
+Config file
 
 Always: 
 Clean up code
